@@ -41,12 +41,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col harf">
-        <h2>Research Student</h2>
-        <img src="images/icon_wakaba.jpg" alt="わかば">
-        <div id="app">
+      <div id="app">
+        <colharf v-bind:class="colclass" />
+        <!-- <div class="col harf">
+          <h2>Research Student</h2>
+          <img src="images/icon_wakaba.jpg" alt="わかば">
           <wakaba />
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -74,6 +75,23 @@
     <p>本サイトは、書籍「わかばちゃんと学ぶGit使い方入門」の練習用素材です</p>
   </footer>
   <script>
+    var colharf = Vue.component('colharf',
+      {
+        // props: ['class'],
+        template: '<div>'
+          + '<h2>Research Student</h2>'
+          + '<imgwakaba />'
+          + '<wakaba />'
+          + '</div>'
+      })
+
+    var imgwakaba = Vue.component('imgwakaba',
+      {
+        template: '<img src="images/icon_wakaba.jpg" alt="わかば">'
+        // template: '<img alt="わかば">'
+      }
+    )
+
     var wakaba = Vue.component('wakaba',
       {
         template: '<p>新入生。Webデザイナーになるのが夢。</p>'
@@ -81,9 +99,16 @@
     )
 
     var app = new Vue({
-      el: '#app'
+      el: '#app',
+      data: {
+        colclass: "col harf",
+        src: "images/icon_wakaba.jpg",
+        alt: "わかば"
+      }
     })
+
   </script>
+
 
 </body>
 
