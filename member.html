@@ -80,15 +80,15 @@
         // props: ['class'],
         template: '<div>'
           + '<h2>Research Student</h2>'
-          + '<imgwakaba />'
+          + '<imgwakaba v-bind:src="src"/>'
           + '<wakaba />'
           + '</div>'
       })
 
     var imgwakaba = Vue.component('imgwakaba',
       {
-        template: '<img src="images/icon_wakaba.jpg" alt="わかば">'
-        // template: '<img alt="わかば">'
+        // template: '<img src="images/icon_wakaba.jpg" alt="わかば">'
+        template: '<img alt="わかば">'
       }
     )
 
